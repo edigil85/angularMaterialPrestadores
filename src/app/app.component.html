@@ -1,0 +1,37 @@
+
+<header id="header"></header>
+    <h6>Clinica Soma</h6>
+    <div class="container-fluid">
+        <h3>Configuracion del prestador</h3>
+        <div class="row">
+            <div class="col-md-3"  style="background-color:rgb(255, 255, 255)">
+                <h3>Identificación / Nit</h3> 
+                <p>811009786</p>
+            </div>
+            <div class="col-md-3"  style="background-color:rgb(255, 255, 255)">
+                <h3>Razón social</h3> 
+                <p>Clinica Soma S.A.</p>
+            </div>
+            <div class="col-lg-5"  style="background-color:#CCCCFF">
+            <h3>Representante legal</h3> 
+                <mat-icon svgIcon="user"></mat-icon>
+                <input type="email" id="nombrePresentantelegal" name="nombrePresentantelegal" >
+                <mat-icon svgIcon="email"></mat-icon>
+                <input type="email" id="emailPresentantelegal" name="emailPresentantelegal" >
+                <mat-icon svgIcon="edit"></mat-icon>
+             </div>
+        </div>
+  </div>
+<span class="toolbar-flex">
+<nav mat-tab-nav-bar>
+  <a mat-tab-link
+  *ngFor="let link of navLinks"
+  [routerLink]="link.link"
+  routerLinkActive #rla="routerLinkActive"
+  [active]="rla.isActive">
+  <mat-icon svgIcon={{link.icon}}></mat-icon><br>
+  {{link.label}}
+</a>
+</nav>
+</span>
+<router-outlet></router-outlet>
