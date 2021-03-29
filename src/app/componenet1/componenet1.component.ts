@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { ModalsedesComponent } from '../Modals/modalsedes/modalsedes.component'
+import {MatDialog, MatDialogConfig} from '@angular/material'
+import { sedesservice} from '../services/sedes.service'
 
 @Component({
   selector: 'app-componenet1',
@@ -7,9 +10,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class Componenet1Component implements OnInit {
 
-  constructor() { }
+  constructor(
+    private dialog: MatDialog
+  ) { }
 
   ngOnInit() {
+    //falta la carga de las sedes
+  }
+
+  onCreate() {
+    const dialogConfig = new MatDialogConfig();
+    dialogConfig.disableClose = true;
+    dialogConfig.autoFocus = true;
+    dialogConfig.width = "60%";
+    this.dialog.open(ModalsedesComponent, dialogConfig)
   }
 
 }

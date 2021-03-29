@@ -4,6 +4,7 @@ import { environment } from 'src/environments/environment';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
+import { FormGroup, FormControl, Validators } from "@angular/forms";
 import { Isedes, sedes} from '../models/sedes'
 
 @Injectable({
@@ -17,6 +18,24 @@ export class sedesservice extends ServiceService<any> {
     this.httpClient = http;
     this.resource = 'sedesprestadores';
   }
+
+  form: FormGroup = new FormGroup({
+    idregistro: new FormControl(null),
+    departamento: new FormControl(0),
+    municipio: new FormControl(''),
+    direccion: new FormControl('', Validators.required),
+  });
+
+  initializeFormGroup() {
+    this.form.setValue({
+      idregistro: null,
+      departamento: '',
+      municipio: '',
+      direccion: '',
+    });
+  }
+
+
   public ConsultarSedes(
     nitPrestador: String,
     tipoIdentificacion: String,
