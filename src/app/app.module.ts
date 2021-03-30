@@ -18,6 +18,10 @@ import { ModalCodigoHabilitacionComponent } from './Modals/modal-codigo-habilita
 import { ModalInfoPrestadorComponent } from './Modals/modal-info-prestador/modal-info-prestador.component';
 import { ModalPrefijoFacturacionComponent } from './Modals/modal-prefijo-facturacion/modal-prefijo-facturacion.component';
 import { ModalContactoPrestadorComponent } from './Modals/modal-contacto-prestador/modal-contacto-prestador.component';
+import {MatGridListModule} from '@angular/material/grid-list';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatButtonModule} from '@angular/material/button';
+import { ReactiveFormsModule, FormsModule} from '@angular/forms';
 
 
 @NgModule({
@@ -43,6 +47,11 @@ import { ModalContactoPrestadorComponent } from './Modals/modal-contacto-prestad
     HttpClientModule,
     MatCardModule,
     MatDialogModule,
+    ReactiveFormsModule,  
+    FormsModule,
+    MatGridListModule,
+    MatFormFieldModule,
+    MatButtonModule,
     
   ],
   providers: [],

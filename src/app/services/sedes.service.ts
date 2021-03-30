@@ -20,15 +20,15 @@ export class sedesservice extends ServiceService<any> {
   }
 
   form: FormGroup = new FormGroup({
-    idregistro: new FormControl(null),
-    departamento: new FormControl(0),
+    $idregistro: new FormControl(null),
+    departamento: new FormControl(''),
     municipio: new FormControl(''),
     direccion: new FormControl('', Validators.required),
   });
 
   initializeFormGroup() {
     this.form.setValue({
-      idregistro: null,
+      $idregistro: null,
       departamento: '',
       municipio: '',
       direccion: '',

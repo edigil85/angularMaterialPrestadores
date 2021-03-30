@@ -17,6 +17,11 @@ export class ModalsedesComponent implements OnInit {
   ngOnInit() {
   }
 
+  onClear() {
+    this.service.form.reset();
+    this.service.initializeFormGroup();
+  }
+
   onClose() {
     this.service.form.reset();
     this.service.initializeFormGroup();
