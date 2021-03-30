@@ -1,3 +1,26 @@
-<p>
-  modal-prefijo-facturacion works!
-</p>
+<mat-toolbar>
+  <span><h3>Información de la sede</h3></span>
+</mat-toolbar>
+<form [formGroup]="service.form" class="normal-form" (submit)="onSubmit()">
+  <mat-grid-list cols="2" rowHeight="300px">
+    <mat-grid-tile>
+      <div class="controles-container">
+        <input type="hidden" formControlName="$idregistro">
+        <label>Departamento*</label>
+        <input type="text" formControlName="departamento">
+        <label>Direccion*</label>
+        <input type="text" formControlName="direccion">
+      </div>
+    </mat-grid-tile>
+    <mat-grid-tile>
+      <div class="controles-container">
+        <label>Ciudad*</label>
+        <input type="text" formControlName="ciudad">
+      </div>
+    </mat-grid-tile>
+  </mat-grid-list>
+  <div class="button-row">
+    <button mat-raised-button color="warn" (click)="onClose()">Cerrar</button>
+    <button mat-raised-button color="primary" type="submit" [disabled]="service.form.invalid">Guardar</button>
+  </div>
+</form>
